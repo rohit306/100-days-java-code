@@ -1,0 +1,140 @@
+GCD:(Greatest Common Divisor)
+-------
+It is the largest integer that can divide 2 numbers.
+
+Ex1:  wap to find GCD of given 2 numbers  ?
+
+package Prgs2;
+import java.util.*;
+public class Gcd 
+{
+	public static void main(String[] args) 
+	{
+	  Scanner sc = new Scanner(System.in);
+	  System.out.println("enter 2 numbers:");
+	  int n1 =sc.nextInt();  //12
+	  int n2 = sc.nextInt(); //24
+	  int gcd = 1;
+	  
+	  for(int i =1; i<=n1 && i<=n2; i++ )
+	  {
+		  if(n1%i==0  && n2%i==0)
+			  gcd = i;  // 12
+	  }
+	  System.out.println("GCD = "+ gcd);
+	} }
+
+enter 2 numbers:
+12
+24
+output:
+12
+
+---------------------------------------------------------------------------------------------
+
+LCM:(Least Common Multiple)
+--------
+It is the smallest integer that is divisible by given 2 numbers.
+
+12 24 
+
+24
+
+Ex2: wap to find LCM of given 2 numbers ?
+
+
+package Prgs2;
+import java.util.*;
+public class Lcm 
+{
+	public static void main(String[] args) 
+	{
+	Scanner sc = new Scanner(System.in);
+	System.out.println("enter 2 numbers:");
+	int n1 = sc.nextInt(); //12
+	int n2 = sc.nextInt(); //24
+	int gcd = 1;
+	for(int i = 1; i<=n1 && i<=n2;i++)
+	{
+		if(n1%i ==0 && n2%i ==0)
+		{
+			gcd = i;
+		}
+	}
+     int lcm = (n1*n2)/gcd;  // (12*24)/12
+	System.out.println(lcm); //24
+	}
+
+}
+
+enter 2 number:
+12
+24
+output:
+24
+------------------------------------------------------------------------------
+
+Ex3: wap to display reverse of a given number ?
+
+package Prgs2;
+import java.util.*;
+public class Reverse_number 
+{
+	public static void main(String[] args) 
+	{
+	Scanner sc = new Scanner(System.in);
+	System.out.println("enter number:");
+	int num = sc.nextInt();  //1234
+	int rev=0;
+	
+	while(num != 0)  // 0
+	{
+		int d = num%10;  // 1 (rem) // last digit of a number
+		rev = rev*10 + d;  // 432*10 + 1 = 4321  //first digit in rev var
+		num = num /10; // 1/10 = 0(quo) omitting last digits from num var
+	}
+	System.out.println("reverse number = "+ rev);		
+	}	}
+
+--------------------------------------------------------------------------------------------------------------
+
+prime numbers:
+-----------------------
+It is a number which is only divisible by itself and 1.
+ex: 2,3,5,7,..
+
+Ex4: wap to display prime numbers between 2 numbers ?
+
+package Prgs2;
+import java.util.*;
+public class Primes 
+{
+	public static void main(String[] args) 
+	{
+	  Scanner sc = new Scanner (System.in);
+	  System.out.println("enter 2 numbers:");
+	  int n1 = sc.nextInt(); // 11
+	  int n2 = sc.nextInt();  // 20
+	  String p="";
+	  for(int i = n1+1; i < n2 ; i++ )  // i = 12
+	  {
+		  int c = 0;
+		  for(int n=i ; n>= 1; n--)  // n=10 ... 1
+		  {
+			  if (i%n ==0)  // 11%1 ==0 -> t
+			   { c= c+1; }  // c = 2
+		  }  
+		  if(c==2)
+			  p = p + i + " ";
+		  
+	   }
+	  System.out.println(p);
+	  } 	}
+
+enter 2 numbers:
+11
+20
+output:
+13 17 19
+
+============================================================================
